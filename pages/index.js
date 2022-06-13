@@ -5,16 +5,28 @@ import Header from "../components/Header/Header";
 import Nav from "../components/Nav/Nav";
 import Projects from "../components/Projects/Projects";
 import Skills from "../components/Skills/Skills";
+import { client } from "../config";
 
-export default function index() {
+export default function index({ about }) {
+
   return (
     <div className='container'>
       <Nav />
       <Header />
       <Projects />
-      <About />
+      <About data={about} />
       <Skills />
       <Contact />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const about = await client.fetch(`*[_type == "about"]`);
+
+  return {
+    props: {
+      about,
+    },
+  };
 }
