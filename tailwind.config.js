@@ -8,7 +8,7 @@ module.exports = {
       },
       fontSize: {
         "clamp-lg": "clamp(34px, 5vw, 72px)",
-        "clamp-xl": "clamp(37px, 5vw, 80px)",
+        "clamp-xl": "clamp(37px, 5vw, 60px)",
       },
     },
   },

@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function Nav() {
   return (
-    <nav className='fixed inset-0 flex justify-between items-center w-full h-[75px] px-[20px] z-10 effect-nav'>
-      <p className='text-white font-bold text-md'>AP</p>
+    <nav className='fixed inset-0 flex justify-between items-center w-full h-[75px] px-[20px] z-10 effect-nav md:px-[90px]'>
+      <p className='text-white font-bold text-md md:text-2xl'>AP</p>
 
       <div className='flex items-center'>
         <a href='https://github.com/axel-po' target='_blank' rel='noreferrer'>

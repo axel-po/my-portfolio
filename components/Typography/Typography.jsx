@@ -1,7 +1,7 @@
 export function Title({ children }) {
-  return <h2 className='text-white text-clamp-xl'>{children}</h2>;
+  return <h2 className='text-white tracking-wide text-clamp-xl'>{children}</h2>;
 }
 
 export function Text({ children }) {
-  return <p className='text-gray text-lg'>{children}</p>;
+  return <p className='text-gray text-lg leading-6 md:text-xl lg:leading-[40px]'>{children}</p>;
 }
