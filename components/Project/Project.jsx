@@ -8,8 +8,8 @@ export default function Project() {
   return (
     <article className=''>
       {/* cursor-pointer transition-all hover:opacity-50s */}
-      <div className='w-full h-[250px] rounded-lg bg-blue-200 md:h-[500px]'>
-        {/* <Image className='rounded-lg' src={Thumb} alt='projet axel' /> */}
+      <div className='rounded-lg '>
+        <Image className='rounded-lg ' width='1703' height='965' src={Thumb} layout='responsive' alt='projet axel' />
       </div>
       <div className=' pt-2'>
         <h3 className='text-lg'>Clone de Netflix</h3>
