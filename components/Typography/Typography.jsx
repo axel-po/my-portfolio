@@ -3,5 +3,5 @@ export function Title({ children }) {
 }
 
 export function Text({ children }) {
-  return <p className='text-gray text-lg leading-6 md:text-xl lg:leading-[40px]'>{children}</p>;
+  return <p className='text-gray text-lg leading-[33px] md:text-xl lg:leading-[40px]'>{children}</p>;
 }
