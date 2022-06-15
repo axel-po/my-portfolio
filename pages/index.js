@@ -7,13 +7,12 @@ import Projects from "../components/Projects/Projects";
 import Skills from "../components/Skills/Skills";
 import { client } from "../config";
 
-export default function index({ about }) {
-
+export default function index({ about, works }) {
   return (
     <div className='container'>
       <Nav />
       <Header />
-      <Projects />
+      <Projects works={works} />
       <About data={about} />
       <Skills />
       <Contact />
@@ -23,10 +22,12 @@ export default function index({ about }) {
 
 export async function getStaticProps() {
   const about = await client.fetch(`*[_type == "about"]`);
+  const works = await client.fetch(`*[_type == "works"]`);
 
   return {
     props: {
       about,
+      works,
     },
   };
 }

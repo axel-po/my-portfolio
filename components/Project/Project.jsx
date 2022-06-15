@@ -1,24 +1,43 @@
-import Image from "next/image";
-import React from "react";
-import { Title } from "../Typography/Typography";
-import Thumb from "/public/images/3.png";
 import Tailwind from "/public/assets/icon-tailwind.svg";
+import Image from "next/image";
+import Link from "next/link";
+import { urlFor } from "../../config";
 
-export default function Project() {
+export default function Project({ work }) {
+  console.log(work);
   return (
-    <article className=''>
-      {/* cursor-pointer transition-all hover:opacity-50s */}
-      <div className='rounded-lg '>
-        <Image className='rounded-lg ' width='1703' height='965' src={Thumb} layout='responsive' alt='projet axel' />
-      </div>
-      <div className=' pt-2'>
-        <h3 className='text-lg'>Clone de Netflix</h3>
-        <div className='flex gap-3'>
-          <Image src={Tailwind} width='25' height='25' alt='icon linkedin axel pointud' />
-          <Image src={Tailwind} width='25' height='25' alt='icon linkedin axel pointud' />
-          <Image src={Tailwind} width='25' height='25' alt='icon linkedin axel pointud' />
-        </div>
-      </div>
-    </article>
+    <>
+      {work ? (
+        <article>
+          <Link href={`/project/${work?.title}`}>
+            <a>
+              <div className='rounded-lg hover:opacity-50s'>
+                <Image
+                  className='rounded-lg cursor-pointer transition-all hover:opacity-50s object-cover'
+                  width='1703'
+                  height='965'
+                  src={urlFor(work?.image?.asset?._ref).url()}
+                  layout='responsive'
+                  alt='projet axel'
+                />
+              </div>
+            </a>
+          </Link>
+
+          <div className=' pt-2'>
+            <Link href='/project/n'>
+              <a className='text-lg'>{work?.title}</a>
+            </Link>
+            <div className='flex gap-3'>
+              <Image src={Tailwind} width='25' height='25' alt='icon linkedin axel pointud' />
+              <Image src={Tailwind} width='25' height='25' alt='icon linkedin axel pointud' />
+              <Image src={Tailwind} width='25' height='25' alt='icon linkedin axel pointud' />
+            </div>
+          </div>
+        </article>
+      ) : (
+        <p>...</p>
+      )}
+    </>
   );
 }
