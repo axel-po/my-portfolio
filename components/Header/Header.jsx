@@ -1,19 +1,24 @@
 import { useEffect, useRef } from "react";
-import { Title } from "../Typography/Typography";
 import { gsap } from "gsap";
 
 export default function Header() {
   const titleRef = useRef();
+  const txtRef = useRef();
+  console.log(txtRef.current);
+
+  const TL = gsap.timeline();
 
   useEffect(() => {
-    gsap.from(titleRef.current, { rotation: "+=360" });
+    TL.to(titleRef.current, { autoAlpha: 1, y: 0, duration: 0.5 }).to(txtRef.current, { autoAlpha: 1, y: 0, duration: 0.5 }, "-=0.2");
   }, []);
 
   return (
     <header className='py-[120px] lg:flex lg:gap-3 lg:justify-between'>
-      <Title ref={titleRef}>Portfolio</Title>
+      <h2 className='text-white tracking-wide text-clamp-xl invisible opacity-0 translate-y-[50px]' ref={titleRef}>
+        Portfolio
+      </h2>
 
-      <p className='text-gray text-lg lg:text-[26px] lg:leading-[40px] mt-5 max-w-[580px]'>
+      <p className='text-gray text-lg mt-5 max-w-[580px] invisible opacity-0 translate-y-[50px] lg:text-[26px] lg:leading-[40px]' ref={txtRef}>
         Bienvenue sur mon portfolio, je suis Axel Pointud développeur web frontend spécialisé sur la librairie React JS.
       </p>
     </header>
