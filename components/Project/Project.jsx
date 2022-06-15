@@ -4,7 +4,6 @@ import Link from "next/link";
 import { urlFor } from "../../config";
 
 export default function Project({ work }) {
-  console.log(work);
   return (
     <>
       {work ? (
