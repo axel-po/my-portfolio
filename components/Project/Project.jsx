@@ -8,7 +8,11 @@ export default function Project({ work }) {
     <>
       {work ? (
         <article>
-          <Link href={`/project/${work?.title}`}>
+          <Link
+            href={{
+              pathname: `/project/${work?.title}`,
+              query: { id: work?._id },
+            }}>
             <a>
               <div className='rounded-lg hover:opacity-50s'>
                 <Image
