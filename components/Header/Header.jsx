@@ -4,7 +4,6 @@ import { gsap } from "gsap";
 export default function Header() {
   const titleRef = useRef();
   const txtRef = useRef();
-  console.log(txtRef.current);
 
   const TL = gsap.timeline();
 
