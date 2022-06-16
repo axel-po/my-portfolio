@@ -21,14 +21,18 @@ export default function Project({ work }) {
                   height='965'
                   src={urlFor(work?.image?.asset?._ref).url()}
                   layout='responsive'
-                  alt='projet axel'
+                  alt='projet axel pointud'
                 />
               </div>
             </a>
           </Link>
 
-          <div className=' pt-2'>
-            <Link href='/project/n'>
+          <div className='pt-2'>
+            <Link
+              href={{
+                pathname: `/project/${work?.title}`,
+                query: { id: work?._id },
+              }}>
               <a className='text-lg'>{work?.title}</a>
             </Link>
             {/* <div className='flex gap-3'>
