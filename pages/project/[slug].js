@@ -16,9 +16,13 @@ export default function project({ work }) {
         <title>Projet - {work[0]?.title}</title>
       </Head>
       <div className='container'>
-        <div className='py-[120px] lg:flex lg:gap-3 lg:justify-between'>
+        <div className='py-[120px] max-w-[580px] mt-5 lg:flex lg:gap-3 lg:justify-between'>
           <Title>{work[0]?.title}</Title>
           <Text>{work[0]?.description}</Text>
+        </div>
+
+        <div>
+          
         </div>
       </div>
     </>
