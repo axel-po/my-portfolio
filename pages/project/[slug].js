@@ -2,17 +2,26 @@ import Nav from "../../components/Nav/Nav";
 import { useRouter } from "next/router";
 import { Title, Text } from "../../components/Typography/Typography";
 import { client } from "../../config";
+import Head from "next/head";
 
 export default function project({ work }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  console.log(work);
+  const router = useRouter();
+
   return (
-    <div className='container'>
-      <div className='py-[120px] lg:flex lg:gap-3 lg:justify-between'>
-        <Title>{work[0]?.title}</Title>
-        <Text>{work[0]?.description}</Text>
+    <>
+      <Head>
+        <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <title>Projet - {work[0]?.title}</title>
+      </Head>
+      <div className='container'>
+        <div className='py-[120px] lg:flex lg:gap-3 lg:justify-between'>
+          <Title>{work[0]?.title}</Title>
+          <Text>{work[0]?.description}</Text>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
