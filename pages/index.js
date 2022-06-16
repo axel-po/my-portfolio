@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
@@ -9,14 +10,22 @@ import { client } from "../config";
 
 export default function index({ about, works }) {
   return (
-    <div className='container'>
-      <Nav />
-      <Header />
-      <Projects works={works} />
-      <About data={about} />
-      <Skills />
-      <Contact />
-    </div>
+    <>
+      <Head>
+        <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <title>Axel Pointud - Développeur web</title>
+      </Head>
+
+      <div className='container'>
+        <Nav />
+        <Header />
+        <Projects works={works} />
+        <About data={about} />
+        <Skills />
+        <Contact />
+      </div>
+    </>
   );
 }
 

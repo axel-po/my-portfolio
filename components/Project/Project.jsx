@@ -8,7 +8,11 @@ export default function Project({ work }) {
     <>
       {work ? (
         <article>
-          <Link href={`/project/${work?.title}`}>
+          <Link
+            href={{
+              pathname: `/project/${work?.title}`,
+              query: { id: work?._id },
+            }}>
             <a>
               <div className='rounded-lg hover:opacity-50s'>
                 <Image
@@ -27,11 +31,11 @@ export default function Project({ work }) {
             <Link href='/project/n'>
               <a className='text-lg'>{work?.title}</a>
             </Link>
-            <div className='flex gap-3'>
+            {/* <div className='flex gap-3'>
               <Image src={Tailwind} width='25' height='25' alt='icon linkedin axel pointud' />
               <Image src={Tailwind} width='25' height='25' alt='icon linkedin axel pointud' />
               <Image src={Tailwind} width='25' height='25' alt='icon linkedin axel pointud' />
-            </div>
+            </div> */}
           </div>
         </article>
       ) : (
