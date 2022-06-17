@@ -2,13 +2,14 @@ import Head from "next/head";
 import React from "react";
 import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
+import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Nav from "../components/Nav/Nav";
 import Projects from "../components/Projects/Projects";
 import Skills from "../components/Skills/Skills";
 import { client } from "../config";
 
-export default function index({ about, works }) {
+export default function index({ about, works, skills }) {
   return (
     <>
       <Head>
@@ -17,12 +18,11 @@ export default function index({ about, works }) {
         <title>Axel Pointud - Développeur web</title>
       </Head>
 
-      <div className='container'>
-        <Nav />
+      <div className='container '>
         <Header />
         <Projects works={works} />
-        <About data={about} />
-        <Skills />
+        <About about={about} />
+        <Skills skills={skills} />
         <Contact />
       </div>
     </>
@@ -30,13 +30,15 @@ export default function index({ about, works }) {
 }
 
 export async function getServerSideProps() {
-  const about = await client.fetch(`*[_type == "about"]`);
+  const about = await client.fetch(`*[_type == "about"][0]{description}`);
   const works = await client.fetch(`*[_type == "works"] | order(_updatedAt desc)`);
+  const skills = await client.fetch(`*[_type == "skills"]{icon, title, _createdAt} | order(_createdAt asc)`);
 
   return {
     props: {
       about,
       works,
+      skills,
     },
   };
 }
