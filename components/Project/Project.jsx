@@ -1,4 +1,3 @@
-import Tailwind from "/public/assets/icon-tailwind.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "../../config";

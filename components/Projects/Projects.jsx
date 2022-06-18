@@ -2,6 +2,8 @@ import Project from "../Project/Project";
 import { Title } from "../Typography/Typography";
 
 export default function Projects({ works }) {
+
+
   return (
     <section>
       <Title>Projets</Title>
