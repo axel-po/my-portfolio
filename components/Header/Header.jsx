@@ -9,7 +9,7 @@ export default function Header() {
 
   useEffect(() => {
     TL.to(titleRef.current, { autoAlpha: 1, y: 0, duration: 0.5 }).to(txtRef.current, { autoAlpha: 1, y: 0, duration: 0.5 }, "-=0.2");
-  }, []);
+  }, [TL]);
 
   return (
     <header className='py-[120px] lg:flex lg:gap-3 lg:justify-between'>

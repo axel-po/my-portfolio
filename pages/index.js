@@ -31,7 +31,7 @@ export default function index({ about, works, skills }) {
 
 export async function getServerSideProps() {
   const about = await client.fetch(`*[_type == "about"][0]{description}`);
-  const works = await client.fetch(`*[_type == "works"] | order(_updatedAt desc)`);
+  const works = await client.fetch(`*[_type == "works"] | order(_createdAt desc)`);
   const skills = await client.fetch(`*[_type == "skills"]{icon, title, _createdAt} | order(_createdAt asc)`);
 
   return {
