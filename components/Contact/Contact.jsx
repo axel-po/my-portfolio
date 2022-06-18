@@ -2,8 +2,9 @@ import { Title } from "../Typography/Typography";
 
 export default function Contact() {
   return (
-    <section className='lg:flex lg:justify-between pb-[120px]'>
+    <section className='pb-[220px] lg:flex lg:justify-between '>
       <Title>Contact</Title>
+      
       <div className='grid grid-cols-1 gap-5 w-[50%] mt-5 md:grid-cols-2 '>
         <a className='text-white text-xl lg:text-2xl hover:text-gray transition-colors' href='https://github.com/axel-po' target='_blanck'>
           Github
