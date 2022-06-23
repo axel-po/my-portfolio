@@ -19,7 +19,7 @@ export default function project({ work }) {
       </Head>
 
       <div className='container'>
-        <div className='pt-[80px]  mt-5 lg:flex lg:gap-3 lg:justify-between lg:flex-col'>
+        <div className='pt-[80px] mt-5 lg:flex lg:gap-3 lg:justify-between lg:flex-col'>
           <Link href='/'>
             <a>
               {/* <AiOutlineArrowLeft /> */}
@@ -29,7 +29,9 @@ export default function project({ work }) {
           <div className='my-5'>
             <Title>{work?.title}</Title>
           </div>
-          <Text>{work?.description}</Text>
+          <div className='mb-5'>
+            <Text>{work?.description}</Text>
+          </div>
           <div className='flex gap-3 my-5'>
             <a
               className='px-[20px] py-[5px] border  transition-all border-white hover:bg-white hover:text-black'
@@ -48,7 +50,7 @@ export default function project({ work }) {
           </div>
           <ul>
             {work?.technosFront && (
-              <li>
+              <li className='mb-2'>
                 Frontend : <span className='font-bold'>{work?.technosFront}</span>{" "}
               </li>
             )}
