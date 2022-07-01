@@ -1,23 +1,27 @@
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { slideInTop } from "../../utils/animations";
 
 export default function Header() {
   const titleRef = useRef();
-  const txtRef = useRef();
-
-  const TL = gsap.timeline();
+  const descRef = useRef();
 
   useEffect(() => {
-    TL.to(titleRef.current, { autoAlpha: 1, y: 0, duration: 0.5 }).to(txtRef.current, { autoAlpha: 1, y: 0, duration: 0.5 }, "-=0.2");
-  }, [TL]);
+    slideInTop(titleRef.current);
+  }, []);
+
+  useEffect(() => {
+
+    slideInTop(descRef.current);
+  }, []);
+
 
   return (
     <header className='py-[120px] lg:flex lg:gap-3 lg:justify-between'>
-      <h2 className='text-white tracking-wide text-clamp-xl invisible opacity-0 translate-y-[50px]' ref={titleRef}>
+      <h2 ref={titleRef} className='text-white tracking-wide text-clamp-xl'>
         Portfolio
       </h2>
 
-      <p className='text-gray text-lg mt-5 max-w-[580px] invisible opacity-0 translate-y-[50px] lg:text-[26px] lg:leading-[40px]' ref={txtRef}>
+      <p ref={descRef} className='text-gray text-lg mt-5 max-w-[580px] lg:text-[26px] lg:leading-[40px]'>
         Bienvenue sur mon portfolio, je suis Axel Pointud développeur web frontend spécialisé sur la librairie React JS.
       </p>
     </header>
