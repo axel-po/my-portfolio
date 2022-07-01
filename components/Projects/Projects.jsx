@@ -3,6 +3,7 @@ import { useRef, useEffect } from "react";
 import { slideInTop } from "../../utils/animations";
 
 export default function Projects({ works }) {
+
   const titleRef = useRef();
   const projectRef = useRef([]);
 
@@ -19,6 +20,7 @@ export default function Projects({ works }) {
   useEffect(() => {
     slideInTop(slideInTop(projectRef.current, true));
   }, []);
+
 
   return (
     <section>
