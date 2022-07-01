@@ -16,9 +16,12 @@ export default function About({ about }) {
 
   return (
     <section className='my-[120px] lg:flex lg:justify-between'>
-      <h2 ref={titleRef} className='text-white tracking-wide text-clamp-xl'>
-        About
-      </h2>
+      <div className='lg:w-6/12'>
+        <h2 ref={titleRef} className='text-white tracking-wide text-clamp-xl'>
+          About
+        </h2>
+      </div>
+
       <div className='mt-5 lg:max-w-[650px]' ref={descRef}>
         <Text>{about?.description ?? <span className='text-red-500'>Erreur lors du chargement des données</span>}</Text>
       </div>

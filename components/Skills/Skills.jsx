@@ -21,14 +21,15 @@ export default function Skills({ skills }) {
     fadeIn(iconRef.current);
   }, []);
 
-return (
+  return (
     <section className='pb-[120px] lg:flex lg:justify-between lg:items-baseline'>
-      <h2 ref={titleRef} className='text-white tracking-wide text-clamp-xl'>
-        Mes Skills
-      </h2>
+      <div className='lg:6/12'>
+        <h2 ref={titleRef} className='text-white tracking-wide text-clamp-xl'>
+          Mes Skills
+        </h2>
+      </div>
 
-      <div className='grid grid-cols-3 gap-5 w-full mt-12 lg:mt-0 lg:flex lg:max-w-[500px] lg:flex-wrap'>
-
+      <div className='grid grid-cols-3 gap-5 w-full mt-12 lg:mt-0 lg:flex lg:w-6/12 lg:max-w-[500px] lg:flex-wrap'>
         {skills.map((skill, idx) => (
           <div key={idx} className='flex flex-col items-center' ref={addToRefs}>
             <img

@@ -19,7 +19,7 @@ export const slideInTop = (el, markers, duration, delay, trigger) => {
         trigger: trigger ? trigger : el,
         start: "top-=150 center",
         end: "bottom center",
-        markers: markers ? true : false,
+        // markers: markers ? true : false,
       },
     }
   );
@@ -40,7 +40,7 @@ export const fadeIn = (el, markers, duration, delay) => {
         trigger: el,
         start: "top center",
         end: "bottom center",
-        markers: markers ? true : false,
+        // markers: markers ? true : false,
       },
     }
   );
