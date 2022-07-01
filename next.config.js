@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io"],
   },
+  build: {
+    transpile: ["gsap"],
+  },
 };
 
 module.exports = nextConfig;

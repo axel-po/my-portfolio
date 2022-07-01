@@ -1,18 +1,40 @@
 import Project from "../Project/Project";
-import { Title } from "../Typography/Typography";
+import { useRef, useEffect } from "react";
+import { slideInTop } from "../../utils/animations";
 
 export default function Projects({ works }) {
+
+  const titleRef = useRef();
+  const projectRef = useRef([]);
+
+  const addToRefs = (el) => {
+    if (el && !projectRef.current.includes(el)) {
+      projectRef.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    slideInTop(titleRef.current, false, "0.6", "0.4", projectRef.current);
+  }, []);
+
+  useEffect(() => {
+    slideInTop(slideInTop(projectRef.current, true));
+  }, []);
 
 
   return (
     <section>
-      <Title>Projets</Title>
+      <h2 ref={titleRef} className='text-white tracking-wide  text-clamp-xl '>
+        Projets
+      </h2>
       {works.length == 0 ? (
         <p>Pas de projets.</p>
       ) : (
         <div className='grid gap-12 mt-[30px] mb-[55px] md:grid-cols-2'>
           {works.map((work, id) => (
-            <Project key={id} work={work} />
+            <div key={id} ref={addToRefs}>
+              <Project work={work} />
+            </div>
           ))}
         </div>
       )}

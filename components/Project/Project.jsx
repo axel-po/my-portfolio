@@ -15,7 +15,7 @@ export default function Project({ work }) {
             <a>
               <div className='rounded-lg hover:opacity-50s'>
                 <Image
-                  className='rounded-lg cursor-pointer transition-all hover:opacity-50s object-cover'
+                  className='rounded-lg cursor-pointer transition-all hover:opacity-50 object-cover'
                   width='1703'
                   height='965'
                   src={urlFor(work?.image?.asset?._ref).url()}
