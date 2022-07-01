@@ -1,16 +1,35 @@
 /* eslint-disable @next/next/no-img-element */
-import { Title } from "../Typography/Typography";
-import Image from "next/image";
+import { useRef, useEffect } from "react";
 import { urlFor } from "../../config";
+import { fadeIn, slideInTop } from "../../utils/animations";
 
 export default function Skills({ skills }) {
+  const titleRef = useRef();
+  const iconRef = useRef([]);
+
+  const addToRefs = (el) => {
+    if (el && !iconRef.current.includes(el)) {
+      iconRef.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    slideInTop(titleRef.current);
+  }, []);
+
+  useEffect(() => {
+    fadeIn(iconRef.current);
+  }, []);
+
   return (
     <section className='pb-[120px] lg:flex lg:justify-between lg:items-baseline'>
-      <Title>Mes Skills</Title>
+      <h2 ref={titleRef} className='text-white tracking-wide text-clamp-xl'>
+        Mes Skills
+      </h2>
 
-      <div className='grid grid-cols-3 gap-5 w-[50%] mt-12 lg:mt-0 lg:flex lg:max-w-[500px] lg:flex-wrap'>
+      <div className='grid grid-cols-3 gap-5 w-full mt-12 lg:mt-0 lg:flex lg:max-w-[500px] lg:flex-wrap'>
         {skills.map((skill, idx) => (
-          <div key={idx} className='flex flex-col items-center'>
+          <div key={idx} className='flex flex-col items-center' ref={addToRefs}>
             <img
               className='w-[40px] h-[40px] lg:w-[50px] lg:h-[50px]'
               src={urlFor(skill?.icon?.asset?._ref).url()}
