@@ -21,17 +21,18 @@ export default function Skills({ skills }) {
     fadeIn(iconRef.current);
   }, []);
 
-  return (
+return (
     <section className='pb-[120px] lg:flex lg:justify-between lg:items-baseline'>
       <h2 ref={titleRef} className='text-white tracking-wide text-clamp-xl'>
         Mes Skills
       </h2>
 
       <div className='grid grid-cols-3 gap-5 w-full mt-12 lg:mt-0 lg:flex lg:max-w-[500px] lg:flex-wrap'>
+
         {skills.map((skill, idx) => (
           <div key={idx} className='flex flex-col items-center' ref={addToRefs}>
             <img
-              className='w-[40px] h-[40px] lg:w-[50px] lg:h-[50px]'
+              className='w-[40px] h-[40px] md:w-[50px] md:h-[50px]'
               src={urlFor(skill?.icon?.asset?._ref).url()}
               alt='icon langage de programmation'
             />

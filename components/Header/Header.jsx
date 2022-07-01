@@ -10,8 +10,10 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+
     slideInTop(descRef.current);
   }, []);
+
 
   return (
     <header className='py-[120px] lg:flex lg:gap-3 lg:justify-between'>

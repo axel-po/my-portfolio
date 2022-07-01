@@ -28,7 +28,7 @@ export default function Projects({ works }) {
       {works.length == 0 ? (
         <p>Pas de projets.</p>
       ) : (
-        <div className='grid md:grid-cols-2 gap-12 mt-[30px] mb-[55px]'>
+        <div className='grid gap-12 mt-[30px] mb-[55px] md:grid-cols-2'>
           {works.map((work, id) => (
             <div key={id} ref={addToRefs}>
               <Project work={work} />
