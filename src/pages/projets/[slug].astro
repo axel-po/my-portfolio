@@ -85,9 +85,7 @@ if (!project) {
       <div class="flex flex-col space-y-16">
         <div class="editor flex flex-col space-y-6">
           <h2>But du projet :</h2>
-          <!-- <p>{project.des}</p> -->
           <div set:html={project.des} />
-          <!-- <div dangerouslySetInnerHTML={{ __html: project.htmlDes }}></div> -->
         </div>
 
         <div class="editor flex flex-col space-y-6">
@@ -118,13 +116,3 @@ if (!project) {
     </header>
   </Wrapper>
 </Layout>
-
-<!-- <script>
-  document.querySelector(".back").addEventListener("click", function () {
-    document.documentElement.style.scrollBehavior = "auto";
-    // Ici, vous pouvez ajouter votre fonction de retour, par exemple window.scrollTo(0, 0);
-    setTimeout(function () {
-      document.documentElement.style.scrollBehavior = "smooth";
-    }, 100); // Réactive le défilement lisse après le retour
-  });
-</script> -->
