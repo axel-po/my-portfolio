@@ -1,0 +1,43 @@
+---
+import SocialNetworks from "@/components/@shared/SocialNetworks.astro";
+import { ShinyButton } from "@/components/ui/shiny-button.tsx";
+---
+
+<footer class="relative w-full pt-12 md:pt-[200px]" id="contact">
+  <div class="z-[10] relative">
+    <div class="flex flex-col items-center">
+      <h2 class="text-4xl text-center font-bold md:text-5xl max-w-4xl">
+        Besoin d'un développeur <span class="text-purple">React JS ?</span>
+        <br />
+        Contactez-<span class="text-purple">moi</span>
+      </h2>
+      <p class="text-white-200 md:mt-10 my-5 text-center max-w-xl mx-auto">
+        Développeur web frontend spécialisé sur l'écosysteme React JS. Profil
+        autodidacte, je suis passionné par le développement web. 🚀
+      </p>
+      <div class="flex flex-col space-y-6">
+        <ShinyButton
+          href="mailto:contact@axel-pointud.fr"
+          text="Contact"
+          client:load
+        />
+
+        <SocialNetworks />
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="relative z-[10] text-blue-100 max-w-5xl mx-auto flex mt-16 md:flex-row flex-col justify-between items-center text-sm mb-12"
+  >
+    <p>© 2024 - Site web personnel Axel Pointud</p>
+    <p>
+      Built with <a
+        class="underline"
+        href="https://astro.build/"
+        target="_blank"
+        title="Astro">Astro</a
+      >{" "}🧡
+    </p>
+  </div>
+</footer>

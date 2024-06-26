@@ -1,0 +1,23 @@
+---
+import CardProject from "@/components/@shared/Projects/CardProject.astro";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { projects } from "@/data/data";
+
+import FiltersProjects from "@/components/@shared/Projects/FiltersProjects";
+---
+
+<section id="projets" class="mb-12">
+  <TextGenerateEffect
+    className="text-center mb-6 text-4xl"
+    client:load
+    words="Mes Projets"
+  />
+  <!-- <div class="flex">
+    <FiltersProjects client:load />
+  </div> -->
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12 max-w-[920px] mx-auto"
+  >
+    {projects.map((project) => <CardProject project={project} />)}
+  </div>
+</section>

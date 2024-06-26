@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+
+import SEO from "@/components/@shared/Seo.astro";
+
+import "@/styles/globals.css";
+import Nav from "@/components/@shared/Nav.astro";
+import Footer from "@/components/@shared/Footer.astro";
+
+import { ViewTransitions } from "astro:transitions";
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <SEO title={title} description={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+  </head>
+  <body class="dark relative">
+    <div
+      class="h-full w-full bg-black bg-grid-white/[0.04] z-[-1]
+   absolute top-0 left-0 flex items-center justify-center"
+    >
+      <div
+        class="absolute pointer-events-none inset-0 flex items-center justify-center bg-black-100
+      [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
+      >
+      </div>
+    </div>
+
+    <Nav />
+    <main
+      class="relative flex justify-center items-center flex-col overflow-hidden px-6 mx-auto"
+    >
+      <slot />
+      <Footer />
+    </main>
+  </body>
+</html>

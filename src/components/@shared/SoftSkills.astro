@@ -1,0 +1,23 @@
+---
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import CardSoftSkills from "@/components/@shared/CardSoftSkills.astro";
+
+import { softskills } from "@/data/data";
+---
+
+<section class="max-w-[920px] mx-auto">
+  <TextGenerateEffect
+    className="text-center mb-6 text-4xl"
+    client:load
+    words="La qualité en projet Web ou multimédia"
+  />
+
+  <p class="text-blue-100 text-center max-w-[550px] mx-auto">
+    La qualité lors du développement est indispensable afin de pouvoir maintenir
+    dans le temps les applications développées.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+    {softskills.map((item) => <CardSoftSkills item={item} />)}
+  </div>
+</section>

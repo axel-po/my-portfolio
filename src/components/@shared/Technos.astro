@@ -1,0 +1,34 @@
+---
+import { iconLinks } from "@/types/types";
+
+type IconListData = keyof typeof iconLinks;
+
+interface Props {
+  iconListsData: IconListData[];
+}
+
+const { iconListsData } = Astro.props as Props;
+---
+
+<div class="flex items-center">
+  {
+    iconListsData.map((icon, index) => (
+      <a
+        href={iconLinks[icon].url}
+        target="_blank"
+        title={iconLinks[icon].name}
+        rel="noopener noreferrer"
+        class=" border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+        style={{
+          transform: `translateX(-${5 * index + 2}px)`,
+        }}
+      >
+        <img
+          src={`/images/icons/technos${icon}`}
+          alt={iconLinks[icon].name}
+          class="p-2"
+        />
+      </a>
+    ))
+  }
+</div>

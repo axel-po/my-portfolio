@@ -1,0 +1,40 @@
+---
+const { title, description } = Astro.props;
+---
+
+<!-- Global Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta
+  name="description"
+  content={description
+    ? description
+    : "Développeur frontend spécialisé sur l'écosystème React JS. Profil autodidacte, je suis passionné par le développement web."}
+/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.axel-pointud.fr/" />
+<meta property="og:title" content={title} />
+<meta
+  property="og:description"
+  content={description
+    ? description
+    : "Développeur frontend spécialisé sur l'écosystème React JS. Profil autodidacte, je suis passionné par le développement web."}
+/>
+<meta property="og:image" content="/og-image.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://www.axel-pointud.fr/" />
+<meta
+  property="twitter:title"
+  content="Axel Pointud - Développeur web Frontend React / Next JS / Typescript"
+/>
+<meta
+  property="twitter:description"
+  content={description
+    ? description
+    : "Développeur frontend spécialisé sur l'écosystème React JS. Profil autodidacte, je suis passionné par le développement web."}
+/>
+<meta property="twitter:image" content="/og-image.png" />

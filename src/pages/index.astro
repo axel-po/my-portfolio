@@ -1,0 +1,16 @@
+---
+import { BentoGridStack } from "@/components/@shared/Bento";
+import Hero from "@/components/@shared/Hero.astro";
+import Projects from "@/components/@shared/Projects/Projects.astro";
+import SoftSkills from "@/components/@shared/SoftSkills.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Axel Pointud - Développeur web Frontend React / Next JS / Typescript"
+>
+  <Hero />
+  <Projects />
+  <BentoGridStack client:load />
+  <SoftSkills />
+</Layout>

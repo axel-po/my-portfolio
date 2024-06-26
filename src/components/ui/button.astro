@@ -1,0 +1,41 @@
+---
+const { type, href } = Astro.props;
+
+const classes =
+  "flex justify-between outline-none text-white font-semibold mt-2 w-full rounded-md bg-black-200 py-3 px-4";
+
+interface Props {
+  type: "button" | "link";
+  href?: string;
+}
+---
+
+{
+  type === "button" ? (
+    <button class={classes}>
+      <slot />
+    </button>
+  ) : type === "link" ? (
+    <a class={classes} href={href} target="_blank">
+      <slot />
+    </a>
+  ) : null
+}
+
+<style>
+  a,
+  button {
+    transition:
+      transform ease 0.2s,
+      box-shadow ease 0.2s;
+  }
+
+  button:hover,
+  a:hover {
+    transform: translate(0, -3px);
+    box-shadow: 0 19px 29px -18px rgba(14, 165, 233, 1);
+    transition:
+      transform ease 0.2s,
+      box-shadow ease 0.2s;
+  }
+</style>

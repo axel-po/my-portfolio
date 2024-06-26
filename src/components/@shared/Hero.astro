@@ -1,0 +1,40 @@
+---
+import SocialNetworks from "@/components/@shared/SocialNetworks.astro";
+import { ShinyButton } from "@/components/ui/shiny-button.tsx";
+import { Spotlight } from "@/components/ui/spotlight.tsx";
+
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect.tsx";
+---
+
+<header class="h-screen min-h-screen max-h-[800px]">
+  <div>
+    <Spotlight
+      className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+      fill="white"
+    />
+    <Spotlight className="h-[80vh] w-[50vw] top-10 left-full" fill="purple" />
+    <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
+  </div>
+
+  <div class="flex justify-center items-center relative z-10 h-full max-w-4xl">
+    <div
+      class="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center"
+    >
+      <TextGenerateEffect
+        client:load
+        words="Axel Pointud, Développeur Frontend React / Next JS / Typescript"
+        className="text-center text-[40px] md:text-5xl !lg:text-5xl"
+      />
+      <p class="text-blue-100 text-center text-normal md:text-lg my-6">
+        Développeur web frontend spécialisé sur l'écosystème React JS. <br
+        />Profil autodidacte, je suis passionné par le développement web. 🚀
+      </p>
+
+      <div class="mb-6">
+        <ShinyButton text="Découvrir mes projets" href="#projets" client:load />
+      </div>
+
+      <SocialNetworks />
+    </div>
+  </div>
+</header>

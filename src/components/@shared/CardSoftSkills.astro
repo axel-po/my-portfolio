@@ -1,0 +1,15 @@
+---
+import type { SoftSkills } from "@/types/types";
+
+interface Props {
+  item: SoftSkills;
+}
+
+const { item } = Astro.props;
+---
+
+<article class="border rounded-lg bg-black-200 px-4 py-4">
+  <h2 class="text-2xl font-bold mb-6">{item?.title}</h2>
+
+  <p>{item?.desc}</p>
+</article>

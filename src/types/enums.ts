@@ -1,0 +1,15 @@
+export enum Icon {
+  GSAP = "/gsap.svg",
+  REACT = "/re.svg",
+  TYPESCRIPT = "/ts.svg",
+  THREE_JS = "/three.svg",
+  TAILWIND_CSS = "/tail.svg",
+  SYMFONY = "/symfony.svg",
+  LARAVEL = "/laravel.svg",
+  JAVASCRIPT = "/javascript.svg",
+  EXPRESS = "/express.png",
+  MONGODB = "/mongodb.svg",
+  NODEJS = "/nodejs.svg",
+  CSHARP = "/csharp.svg",
+  UNITY = "/unity.png",
+}
